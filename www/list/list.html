@@ -2,5 +2,11 @@
 	<ion-content class="padding" ng-init="editUserToggle=false">
 		<h1>List</h1>
 
+		<ion-list>
+			<ion-item ng-repeat="item in list" ui-sref="detail({id: item.id})">
+				<span class="label">{{ item.group }}</span>
+				{{ item.name }}
+			</ion-item>
+		</ion-list>
 	</ion-content>
 </ion-view>
