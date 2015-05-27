@@ -1,0 +1,12 @@
+<ion-view view-title="Login">
+	<ion-content class="padding">
+		<div ng-show="errorMessage">{{ errorMessage }}</div>
+		<div class="list">
+		<form ng-submit="submit()">
+			<label class="item item-input">DB <input ng-model="login.db"></label>
+			<label>Username <input ng-model="login.username"></label>
+			<label>Password <input ng-model="login.password" type="password"></label>
+			<input type="submit">
+		</form>
+	</ion-content>
+</ion-view>

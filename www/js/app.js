@@ -16,7 +16,14 @@ angular.module('starter', ['ionic', 'ui.router', 'odoo'])
       StatusBar.styleDefault();
     }
   });
-}).config(['$stateProvider','$urlRouterProvider' , function ($stateProvider, $urlRouterProvider) {
+})
+.run(['jsonRpc', '$state', function (jsonRpc, $state) {
+  jsonRpc.errorInterceptors.push(function (a) {
+    if (a.title === 'session_expired')
+      $state.go('login');
+  });
+}])
+.config(['$stateProvider','$urlRouterProvider' , function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('list', {
     url: '/',
     templateUrl: 'list/list.html',
@@ -25,6 +32,10 @@ angular.module('starter', ['ionic', 'ui.router', 'odoo'])
     url: '/detail/{id}',
     templateUrl: 'detail/detail.html',
     controller: 'DetailCtrl'
+  }).state('login', {
+    url: '/login',
+    templateUrl: 'login/login.html',
+    controller: 'LoginCtrl'
   });
   $urlRouterProvider.otherwise('/');
   console.log('dans config');
