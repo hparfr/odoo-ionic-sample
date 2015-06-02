@@ -17,11 +17,19 @@ angular.module('starter', ['ionic', 'ui.router', 'odoo'])
     }
   });
 })
-.run(['jsonRpc', '$state', function (jsonRpc, $state) {
+.run(['jsonRpc', '$state', '$rootScope', function (jsonRpc, $state, $rootScope) {
   jsonRpc.errorInterceptors.push(function (a) {
     if (a.title === 'session_expired')
       $state.go('login');
   });
+
+  $rootScope.mrpProduction = jsonRpc.syncImportObject({
+    model: 'mrp.production',
+    func_key: 'auto',
+    domain: [['state', 'in', ['ready']]],
+    limit: 50,
+    interval: 1000,
+    });
 }])
 .config(['$stateProvider','$urlRouterProvider' , function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('list', {
