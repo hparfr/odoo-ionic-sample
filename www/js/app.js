@@ -28,7 +28,7 @@ angular.module('starter', ['ionic', 'ui.router', 'odoo'])
     func_key: 'auto',
     domain: [['state', 'in', ['ready']]],
     limit: 50,
-    interval: 1000,
+    interval: 5000,
     });
 }])
 .config(['$stateProvider','$urlRouterProvider' , function ($stateProvider, $urlRouterProvider) {

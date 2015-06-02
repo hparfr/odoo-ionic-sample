@@ -4,7 +4,7 @@
 angular.module('starter').controller('LoginCtrl', ['$scope', 'jsonRpc', '$state', function ($scope, jsonRpc, $state) {
 
 	$scope.login = {
-		'db': 'db_v1',
+		'db': 'db',
 		'username':'admin'
 	};
 	$scope.submit = function () {
