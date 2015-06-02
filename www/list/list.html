@@ -1,7 +1,7 @@
 <ion-view view-title="List">
-	<ion-content class="padding" ng-init="editUserToggle=false">
+	<ion-content class="padding">
 		<ion-list>
-			<ion-item ng-repeat="item in mrpProduction.data" ui-sref="detail({id: item.id})">
+			<ion-item ng-repeat="item in mrpProduction" ui-sref="detail({id: item.id})">
 				{{ item.name }}
 			</ion-item>
 		</ion-list>
