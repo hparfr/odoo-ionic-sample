@@ -38,5 +38,4 @@ angular.module('starter', ['ionic', 'ui.router', 'odoo'])
     controller: 'LoginCtrl'
   });
   $urlRouterProvider.otherwise('/');
-  console.log('dans config');
 }]);

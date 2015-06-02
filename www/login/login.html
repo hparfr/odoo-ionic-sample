@@ -3,10 +3,10 @@
 		<div ng-show="errorMessage">{{ errorMessage }}</div>
 		<div class="list">
 		<form ng-submit="submit()">
-			<label class="item item-input">DB <input ng-model="login.db"></label>
-			<label>Username <input ng-model="login.username"></label>
-			<label>Password <input ng-model="login.password" type="password"></label>
-			<input type="submit">
+			<label class="item item-input"><span class="input-label">DB </span><input ng-model="login.db" type="text"></label>
+			<label class="item item-input"><span class="input-label">Username </span><input ng-model="login.username" type="text"></label>
+			<label class="item item-input"><span class="input-label">Password </span><input ng-model="login.password" type="password"></label>
+			<div class="item item-imput"><input type="submit" class="button button-positive"></div>
 		</form>
 	</ion-content>
 </ion-view>
