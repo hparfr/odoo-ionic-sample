@@ -1,34 +1,30 @@
-<ion-view title="Production : {{item.name}} {{item.product_id.name}}">
+<ion-view title="Production: {{item.name}} {{item.product_id.name}}">
   <ion-content class="has-header">
-    <div class="row center">
-      <div class="col col-50 positive-bg border">
-        Products to Consume
-      </div>
-      <div class="col col-50 positive-bg border">
-        Work Order
-      </div>
-    </div>
-    <div class="row">
-      <div class="col col-50">
-        <ul class="list">
-          <li ng-repeat="move in item.move_lines" class="item">
+
+  <div class="row">
+      <div class="col">
+        <div class="item item-divider">Products to Consume</div>
+
+        <div ng-repeat="move in item.move_lines" class="item">
             {{ move.product_qty }}
             X
             {{ move.product_id.default_code }}
-         </li>
-        <ul>
+         </div>
       </div>
-      <div class="col col-50">
-        <ul class="list">
-          <li ng-repeat="line in item.workcenter_lines" class="item">
-             {{ line.name }}
-          </li>
-        </ul>
+      
+      <div class="col">
+        <div class="item item-divider">Work Order</div>
+          <div ng-repeat="line in item.workcenter_lines" class="item">
+               {{ line.name }}
+          </div>
+        </div>
       </div>
     </div>
   </ion-content>
-    <div class="bar bar-footer">
-      <a href="#/list" class="button button-large pull-left">Back</a>
-      <button ng-click="confirm()" class="button button-large button-balanced pull-right">Confirm</button>
-    </div>
+
+  <div class="bar bar-footer">
+    <a href="#/list" class="button button-large pull-left">Back</a>
+    <button ng-click="confirm()" class="button button-large button-balanced pull-right">Confirm</button>
+  </div>
+
 </ion-view>
