@@ -19,8 +19,8 @@ angular.module('starter', ['ionic', 'ui.router', 'odoo'])
 })
 .run(['jsonRpc', '$state', '$rootScope', function (jsonRpc, $state, $rootScope) {
   jsonRpc.errorInterceptors.push(function (a) {
-    if (a.title === 'session_expired')
-      $state.go('login');
+    $state.go('login');
+    console.log('error : ', a);  
   });
 
 }])
