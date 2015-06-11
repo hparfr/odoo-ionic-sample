@@ -19,7 +19,13 @@ Get ionic and cordova if you want to build or deploy for Android, iOS and Firefo
 $ sudo npm install -g ionic cordova
 ```
 
-Configure your http server like that : 
+
+Odoo server
+
+If you don't want to fight against CORS issues, set a proxy : 
+redirect all /web request to http://odooserver/web
+
+If you use nginx, configure your it like that 
 
 ```nginx
 server {
@@ -31,10 +37,3 @@ server {
 }
 
 ```
-
-
-## Demo
-http://plnkr.co/edit/tpl:IUU30p?p=preview
-
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/contribute/#issues) to the main Ionic repository. On the other hand, pull requests are welcome here!
